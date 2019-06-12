@@ -24,17 +24,73 @@ crossorigin="anonymous"></script>
 
 
 <body>
-
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
+<!--Jumbotron Header-->
+<div class="jumbotron">
+    <div class="container" id="headertext">
         <h1 class="display-4">Come On Ride That Train</h1>
         <p class="lead">It's a choo choo train!</p>
     </div>
 </div>
+
+<!--Train Schedule Table-->
+<div class="card">
+    <div class="card-header">
+        <h5>Current Train Schedule</h5>
+    </div>
+    <div class= "card-body">
+            <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>The L</td>
+                            <td>Nowhere</td>
+                            <td>5</td>
+                            <td>11:15am</td>
+                            <td>5</td>
+                        </tr> -->
+                    </tbody>
+                  </table>
+    </div>
+</div>
+
     
+<!--Train Schedule Form-->
+<div class="card">
+    <div class="card-header">
+             <h5>Add Train</h5>
+    </div>
+    <div class="card-body">            
+            
+      <form>
+            <div class="form-group">
+              <label>Train Name</label>
+              <input type="text" class="form-control" id="trainname" placeholder="Enter Train Name">
+            </div>
+            <div class="form-group">
+              <label>Destination</label>
+              <input type="text" class="form-control" id="destination" placeholder="Enter Destination">
+            </div>
+            <div class="form-group">
+                    <label>First Train Time (HH:mm - military time)</label>
+                    <input type="time" class="form-control" id="traintime" placeholder="Enter Initial Departure Time in Military Format">
+            </div>
+            <div class="form-group">
+                    <label>Frequency (min)</label>
+                    <input type="number" class="form-control" id="frequency" placeholder="Enter Frequency of Train Departure in Minutes">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
 
-
-
+        </div>
+    </div>
 
  
 
