@@ -38,7 +38,7 @@ crossorigin="anonymous"></script>
         <h5>Current Train Schedule</h5>
     </div>
     <div class= "card-body">
-            <table class="table">
+            <table class="table" id="traintable">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">Train Name</th>
@@ -49,13 +49,6 @@ crossorigin="anonymous"></script>
                       </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr>
-                            <td>The L</td>
-                            <td>Nowhere</td>
-                            <td>5</td>
-                            <td>11:15am</td>
-                            <td>5</td>
-                        </tr> -->
                     </tbody>
                   </table>
     </div>
@@ -80,7 +73,7 @@ crossorigin="anonymous"></script>
             </div>
             <div class="form-group">
                     <label>First Train Time (HH:mm - military time)</label>
-                    <input type="time" class="form-control" id="traintime" placeholder="Enter Initial Departure Time in Military Format">
+                    <input type="text" class="form-control" id="traintime" placeholder="Enter Initial Departure Time in Military Format">
             </div>
             <div class="form-group">
                     <label>Frequency (min)</label>
