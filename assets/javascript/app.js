@@ -72,12 +72,24 @@ database.ref().on("child_added", function(childSnapshot){
   console.log(trainFrequency);
 
   //calculate the train time from military to local time format
-  // var convertedTime = moment.tz.setDefault(timeStart, "HH:mm").subtract(1, "years");
-  // console.log(convertedTime);
+  var convertedTime = moment(firstTrain, "HH:mm").subtract(1, "years");
+  console.log(convertedTime);
 
-  // var currentTime = moment.tz.setDefault();
+  var currentTime = moment();
+  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
+  var diffTime = moment().diff(moment(convertedTime), "minutes");
+  console.log("DIFFERENCE IN TIME: " + diffTime);
 
+  var tRemainder = diffTime % trainFrequency;
+  console.log(tRemainder);
+
+  var tMinutesTillTrain = trainFrequency - tRemainder;
+  console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+  // Next Train
+  var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+  console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
 
 
@@ -88,7 +100,9 @@ var newRow = $("<tr>").append(
   $("<td>").text(childSnapshot.val().dbTrainName),
   $("<td>").text(childSnapshot.val().dbTrainDestination),
   $("<td>").text(childSnapshot.val().dbTrainFrequency),
-  $("<td>").text(childSnapshot.val().dbFirstTrain)
+  $("<td>").text(nextTrain.format("hh:mm a")),
+  $("<td>").text(tMinutesTillTrain)
+
   
 );
 //append the new row to the table
